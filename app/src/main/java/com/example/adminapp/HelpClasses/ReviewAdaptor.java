@@ -43,6 +43,10 @@ public class ReviewAdaptor extends FirebaseRecyclerAdapter<PlaceHelperClass,Revi
             intent.putExtra("category",model.getCategory());
             intent.putExtra("latitude",model.getLatitude());
             intent.putExtra("longitude",model.getLongitude());
+            intent.putExtra("userid",model.getUser());
+            intent.putExtra("year",model.getYear());
+            intent.putExtra("month",model.getMonth());
+            intent.putExtra("day",model.getDay());
             context.startActivity(intent);
         });
     }

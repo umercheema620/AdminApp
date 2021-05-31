@@ -21,7 +21,8 @@ public class ReviewPlaceData extends AppCompatActivity {
 
     TextView name,desc;
     ImageView image;
-    String Pname,Pdesc,Pimage,Pcategory,Platitude,Plongitude;
+    String Pname,Pdesc,Pimage,Pcategory,Platitude,Plongitude,Puser;
+    int year,month,day;
 
     private DatabaseReference rootNode = FirebaseDatabase.getInstance().getReference("Places");
     private DatabaseReference rootNode2 = FirebaseDatabase.getInstance().getReference("Review");
@@ -42,6 +43,10 @@ public class ReviewPlaceData extends AppCompatActivity {
         Pcategory = getIntent().getStringExtra("category");
         Platitude = getIntent().getStringExtra("latitude");
         Plongitude = getIntent().getStringExtra("longitude");
+        Puser = getIntent().getStringExtra("userid");
+        year = getIntent().getIntExtra("year",2021);
+        month = getIntent().getIntExtra("month",5);
+        day = getIntent().getIntExtra("day",27);
 
         name.setText(Pname);
         desc.setText(Pdesc);
@@ -54,7 +59,7 @@ public class ReviewPlaceData extends AppCompatActivity {
     }
 
     public void Approve(View view) {
-        PlaceHelperClass AddnewPlace = new PlaceHelperClass(Pname,Pdesc,Pimage,Pcategory,Platitude,Plongitude);
+        PlaceHelperClass AddnewPlace = new PlaceHelperClass(Pname,Pdesc,Pimage,Pcategory,Platitude,Plongitude,Puser,year,month,day);
         rootNode.child(Pname).setValue(AddnewPlace);
 
         rootNode2.child(Pname).removeValue();
