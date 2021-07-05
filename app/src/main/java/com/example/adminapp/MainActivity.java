@@ -307,7 +307,9 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
         switch (menuItem.getItemId()) {
 
-            case R.id.nav_user:
+            case R.id.nav_add_event:
+                startActivity(new Intent(getApplicationContext(),AddEvent.class));
+                break;
 
             case R.id.nav_logout:
                 SessionManager session = new SessionManager(MainActivity.this);
