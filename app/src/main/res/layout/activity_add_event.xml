@@ -98,25 +98,46 @@
             android:textSize="17sp" />
 
         <CheckBox
+            android:id="@+id/checkbox1"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:text="Food Stalls"/>
         <CheckBox
+            android:id="@+id/checkbox2"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:text="Concert"/>
         <CheckBox
+            android:id="@+id/checkbox3"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:text="Political Event"/>
         <CheckBox
+            android:id="@+id/checkbox4"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:text="Holiday Event"/>
         <CheckBox
+            android:id="@+id/checkbox5"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:text="Rides"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:fontFamily="@font/muli_bold"
+            android:text="Add Location"
+            android:textColor="@color/black"
+            android:textSize="17sp" />
+        <Button
+            android:id="@+id/map_location"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Select Location"
+            android:onClick="GoToMap"
+            android:background="@color/colorPrimary"/>
 
         <RelativeLayout
             android:layout_width="match_parent"
@@ -158,22 +179,6 @@
                 android:layout_alignLeft="@+id/btn_date"
                 android:layout_alignStart="@+id/btn_date" />
         </RelativeLayout>
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            android:fontFamily="@font/muli_bold"
-            android:text="Add Location"
-            android:textColor="@color/black"
-            android:textSize="17sp" />
-        <Button
-            android:id="@+id/map_location"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Select Location"
-            android:onClick="GoToMap"
-            android:background="@color/colorPrimary"/>
 
         <Button
             android:id="@+id/AddPicture"

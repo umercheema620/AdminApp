@@ -29,6 +29,7 @@ public class ReviewPlaceData extends AppCompatActivity {
     ImageView image;
     String Pname,Pdesc,Pimage,Pcategory,Platitude,Plongitude,Puser;
     int year,month,day,approve,disapprove,voted;
+    boolean featured;
 
     private DatabaseReference rootNode = FirebaseDatabase.getInstance().getReference("Places");
     private DatabaseReference rootNode2 = FirebaseDatabase.getInstance().getReference("Review");
@@ -56,6 +57,7 @@ public class ReviewPlaceData extends AppCompatActivity {
         year = getIntent().getIntExtra("year",2021);
         month = getIntent().getIntExtra("month",5);
         day = getIntent().getIntExtra("day",27);
+        featured = getIntent().getBooleanExtra("featured",false);
 
         rootNode2.child(Pname).addValueEventListener(new ValueEventListener() {
             @Override
@@ -91,7 +93,7 @@ public class ReviewPlaceData extends AppCompatActivity {
     }
 
     public void Approve(View view) {
-        PlaceHelperClass AddnewPlace = new PlaceHelperClass(Pname,Pdesc,Pimage,Pcategory,Platitude,Plongitude,Puser,year,month,day);
+        PlaceHelperClass AddnewPlace = new PlaceHelperClass(Pname,Pdesc,Pimage,Pcategory,Platitude,Plongitude,Puser,year,month,day,featured);
         rootNode.child(Pname).setValue(AddnewPlace);
 
         rootNode2.child(Pname).removeValue();

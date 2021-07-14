@@ -3,6 +3,7 @@ package com.example.adminapp.HelpClasses;
 public class PlaceHelperClass {
     private String name,category,imageUrl,description, latitude,longitude,user;
     private int year,month,day;
+    boolean featured;
 
     public String getLatitude() {
         return latitude;
@@ -22,7 +23,7 @@ public class PlaceHelperClass {
 
     public PlaceHelperClass(){}
 
-    public PlaceHelperClass(String name, String description,String imageUrl,String category, String latitude, String longitude,String user, int year, int month, int day) {
+    public PlaceHelperClass(String name, String description,String imageUrl,String category, String latitude, String longitude,String user, int year, int month, int day, boolean featured) {
         this.name = name;
         this.category = category;
         this.imageUrl = imageUrl;
@@ -33,6 +34,15 @@ public class PlaceHelperClass {
         this.year = year;
         this.month = month;
         this.day = day;
+        this.featured = featured;
+    }
+
+    public boolean isFeatured() {
+        return featured;
+    }
+
+    public void setFeatured(boolean featured) {
+        this.featured = featured;
     }
 
     public int getYear() {

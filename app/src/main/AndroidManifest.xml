@@ -2,6 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.adminapp">
 
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="android.permission.INTERNET" />
 
     <application
@@ -11,7 +13,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.AdminApp">
-        <activity android:name=".AddEvent"></activity>
+        <activity android:name=".FeaturedPlaceData"></activity>
+        <activity android:name=".Featured" />
+        <activity android:name=".MapShow" />
+        <activity android:name=".AddEvent" />
         <activity android:name=".PlacesData" />
         <activity android:name=".ReviewPlaceData" />
         <activity android:name=".UnderReviewPlaces" />
@@ -28,6 +33,17 @@
         <meta-data
             android:name="preloaded_fonts"
             android:resource="@array/preloaded_fonts" />
+        <meta-data
+            android:name="com.google.android.gms.version"
+            android:value="@integer/google_play_services_version" />
+
+        <uses-library
+            android:name="org.apache.http.legacy"
+            android:required="false" />
+
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="AIzaSyBhrTjOJENk1CeSfTdsPDLQOqJUGa9dR7k" />
     </application>
 
 </manifest>
